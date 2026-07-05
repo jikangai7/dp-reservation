@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>海外DP URL生成</title>
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div id="expiryTimer" class="expiry-timer" hidden>
+  <span class="expiry-timer-label">残り時間</span>
+  <span class="expiry-timer-value">15:00</span>
+</div>
+<main class="app">
+  <header class="app-header">
+    <div class="app-header-row">
+      <h1>海外DP URL生成</h1>
+      <button id="stopServerBtn" class="btn btn-danger">サーバー停止</button>
+    </div>
+    <p class="sub">最安フライト選択後、上位3ホテルのプランを選び、/dp/avail 到達を検証する</p>
+  </header>
+
+  <div id="serverStoppedBanner" class="server-stopped-banner" hidden>
+    サーバーを停止しました。再起動するには <code>start-server.bat</code> をダブルクリックしてください。
+  </div>
+
+  <form id="searchForm" class="search-form">
+    <div class="search-form-row search-form-row-fields">
+      <label>出発地
+        <input name="dep" value="OSA" maxlength="3" required>
+      </label>
+      <label>目的地
+        <input name="dest" value="MNL" maxlength="3" required>
+      </label>
+      <label>出発日
+        <input type="date" name="from" value="2026-10-01" required>
+      </label>
+      <label>現地出発日
+        <input type="date" name="to" value="2026-10-10" required>
+      </label>
+      <label>キャリア（任意）
+        <input name="carrier" maxlength="2" placeholder="例: NH" pattern="[A-Za-z0-9]{2}" title="キャリア2レター（例: NH）">
+      </label>
+    </div>
+    <div class="search-form-row search-form-row-options">
+      <div class="site-choice" role="group" aria-label="サイト">
+        <span class="group-label">サイト</span>
+        <label class="radio-label"><input type="radio" name="site" value="sg" checked> SG</label>
+        <label class="radio-label"><input type="radio" name="site" value="travelko"> Travelko</label>
+      </div>
+      <div class="top-counts" role="group" aria-label="ホテル取得数">
+        <span class="group-label">ホテル取得数</span>
+        <label class="select-label">安い順
+          <select name="topCheap">
+            <option value="0">0</option>
+            <option value="1" selected>1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+        </label>
+        <label class="select-label">ランク順
+          <select name="topRank">
+            <option value="0">0</option>
+            <option value="1" selected>1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+        </label>
+      </div>
+      <div class="collect-btn-wrap">
+        <button type="submit" id="collectBtn" class="btn-primary">
+          <span class="btn-label">URL取得</span>
+        </button>
+        <span id="collectElapsed" class="collect-elapsed" hidden></span>
+      </div>
+    </div>
+  </form>
+
+  <div class="toolbar">
+    <span class="hint">安い順1ページ目のフライトをキャリアルール（直前と同キャリアは読み飛ばし・同キャリア合計2つまで）で巡回し、各フライトごとにホテルを「ホテル取得数」で指定した件数分（安い順・ランク順それぞれ0〜3件、既定1件）取得。フライト数・件数により数十秒〜30分程度かかります。サイトはSG（AgentCode=HATOP）またはTravelko（AgentCode=HACTB, meta=1, metaLandingInit=1）を選択。キャリアを2レターで指定すると検索自体をそのキャリアに絞り込み、商品ID末尾1桁が同じフライトは合計2つまでとする巡回ルールに切り替わります</span>
+    <button id="runAllBtn" class="btn" disabled>CXL無料をすべて実行</button>
+  </div>
+
+  <p id="collectError" class="error-banner" hidden></p>
+
+  <div id="cards" class="cards"></div>
+</main>
+
+<template id="cardTemplate">
+  <article class="card">
+    <div class="card-status">
+      <span class="badge badge-idle">未実行</span>
+      <span class="status-message">未実行。packageId / __tx__ は実行後に取得されます</span>
+      <button class="btn btn-avail">avail実行</button>
+      <a class="btn btn-open" hidden target="_blank" rel="noopener">input画面を開く</a>
+    </div>
+
+    <div class="input-url-row" hidden>
+      <span class="input-url-label">到達URL</span>
+      <code class="input-url-value"></code>
+    </div>
+
+    <div class="card-body">
+      <div class="info-box info-air">
+        <div class="info-head">
+          <span class="sort-label">価格の安い順</span>
+          <span class="rank-badge">1位</span>
+        </div>
+        <div class="info-air-content"></div>
+      </div>
+      <div class="info-box info-hotel">
+        <div class="info-head">
+          <span class="sort-label">価格の安い順</span>
+          <span class="rank-badge"></span>
+        </div>
+        <div class="info-hotel-content"></div>
+      </div>
+    </div>
+
+    <details class="keys-panel">
+      <summary>キー・トークン／コマンド</summary>
+      <div class="keys-body">
+        <div class="key-group">
+          <div class="key-group-label">/dp/list（一覧画面）で必要</div>
+          <div class="key-rows key-rows-list"></div>
+        </div>
+        <div class="key-group">
+          <div class="key-group-label">POST /dp/avail（在庫確認API）　送信: selectedItemKey → 応答: packageId</div>
+          <div class="key-rows key-rows-avail"></div>
+        </div>
+        <div class="key-group">
+          <div class="key-group-label">/dp/reservation/input（予約入力画面）で必要</div>
+          <div class="key-rows key-rows-reservation"></div>
+        </div>
+        <div class="cmd-rows"></div>
+      </div>
+    </details>
+  </article>
+</template>
+
+<script src="/app.js"></script>
+</body>
+</html>
