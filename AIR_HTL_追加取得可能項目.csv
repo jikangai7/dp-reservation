@@ -1,0 +1,54 @@
+種別,カテゴリ,項目名,JSONパス（selectedItem以下）,例
+AIR,空港・便詳細,出発空港コード,airInfo.searchResult[0].flight.segmentList[0][0][0].departure.airportCode,KIX
+AIR,空港・便詳細,出発空港名,airInfo.searchResult[0].flight.segmentList[0][0][0].departure.airportName,関西国際空港
+AIR,空港・便詳細,出発都市名,airInfo.searchResult[0].flight.segmentList[0][0][0].departure.cityName,大阪
+AIR,空港・便詳細,出発ターミナル,airInfo.searchResult[0].flight.segmentList[0][0][0].departure.departureTerminal,1
+AIR,空港・便詳細,出発時刻,airInfo.searchResult[0].flight.segmentList[0][0][0].departure.departureTime,1935
+AIR,空港・便詳細,出発日,airInfo.searchResult[0].flight.segmentList[0][0][0].departure.departureDate,20261001
+AIR,空港・便詳細,到着空港コード,airInfo.searchResult[0].flight.segmentList[0][0][0].arrival.airportCode,MNL
+AIR,空港・便詳細,到着空港名,airInfo.searchResult[0].flight.segmentList[0][0][0].arrival.airportName,ニノイアキノ国際空港
+AIR,空港・便詳細,到着都市名,airInfo.searchResult[0].flight.segmentList[0][0][0].arrival.cityName,マニラ
+AIR,空港・便詳細,到着ターミナル,airInfo.searchResult[0].flight.segmentList[0][0][0].arrival.arrivalTerminal,3
+AIR,空港・便詳細,到着時刻,airInfo.searchResult[0].flight.segmentList[0][0][0].arrival.arrivalTime,2305
+AIR,空港・便詳細,航空会社コード,airInfo.searchResult[0].flight.segmentList[0][0][0].carrier.carrierCode,5J
+AIR,空港・便詳細,航空会社名,airInfo.searchResult[0].flight.segmentList[0][0][0].carrier.carrierName,セブ パシフィックエア
+AIR,空港・便詳細,便名,airInfo.searchResult[0].flight.segmentList[0][0][0].carrier.flightNumber,827
+AIR,座席・条件,座席クラス,airInfo.searchResult[0].flight.seatClass,Y
+AIR,座席・条件,直行/経由フラグ,airInfo.searchResult[0].flight.isDirect,false
+AIR,座席・条件,経由回数,airInfo.searchResult[0].flight.segmentList[0][0][0].numberOfStop,0
+AIR,座席・条件,飛行時間（分）,airInfo.searchResult[0].flight.segmentList[0][0][0].journeyTime,270
+AIR,座席・条件,残席数,airInfo.searchResult[0].flight.segmentList[0][0][0].availableSeatNumber,9
+AIR,手荷物・食事,機内持込手荷物,airInfo.searchResult[0].flight.segmentList[0][0][0].fareTypeInfo.carryOnBaggageName,機内持込7kgまで
+AIR,手荷物・食事,預入手荷物,airInfo.searchResult[0].flight.segmentList[0][0][0].fareTypeInfo.checkInBaggageName,預入手荷物なし
+AIR,手荷物・食事,機内食,airInfo.searchResult[0].flight.segmentList[0][0][0].fareTypeInfo.mealName,食事なし
+AIR,料金内訳,運賃（チケット代）,airInfo.searchResult[0].fareInfo.fareDetail.adult.ticketFare,16900
+AIR,料金内訳,空港税,airInfo.searchResult[0].fareInfo.fareDetail.adult.airportTax,3630
+AIR,料金内訳,海外諸税,airInfo.searchResult[0].fareInfo.fareDetail.adult.overseasTax,34200
+AIR,料金内訳,手数料,airInfo.searchResult[0].fareInfo.fareDetail.adult.handlingFee,3740
+AIR,料金内訳,合計（1名）,airInfo.searchResult[0].fareInfo.fareDetail.adult.totalPrice,58470
+AIR,おすすめ情報,レコメンド理由,airInfo.searchResult[0].fareInfo.recommend.recommendPointDetail,サイト内で最安値！
+AIR,おすすめ情報,レコメンドスコア,airInfo.searchResult[0].fareInfo.recommend.score,1
+HTL,基本情報,ホテルコード,hotelInfo.code,3462222
+HTL,基本情報,ホテル名（日本語）,hotelInfo.name.jp,スポット オン クラッシー バンクベッド ニア マカティ マニラ フォーマリー MYTOWN マドリード
+HTL,基本情報,ホテル名（英語）,hotelInfo.name.en,Spot On Classy Bunkbeds Near Makati Manila Formerly MYTOWN Madrid
+HTL,基本情報,電話番号,hotelInfo.tel,63-282711818
+HTL,基本情報,住所,hotelInfo.address,"BLK 212 Lot 33Lower Azucena, Makati City 1218"
+HTL,基本情報,緯度,hotelInfo.latlng.lat,14.54228
+HTL,基本情報,経度,hotelInfo.latlng.lng,121.05924
+HTL,評価,ホテルグレード,hotelInfo.grade,2
+HTL,評価,口コミ評価,hotelInfo.guestReview,null（未取得の場合あり）
+HTL,エリア,エリア名（日本語）,hotelInfo.region.name.short.jp,ペンボ
+HTL,エリア,エリア詳細（日本語）,hotelInfo.region.name.long.jp,"ペンボ, タギッグ, 首都圏, フィリピン"
+HTL,エリア,都市名,hotelInfo.mainCity.details.city.name.jp,マニラ
+HTL,エリア,国名,hotelInfo.mainCity.details.country.name.jp,フィリピン
+HTL,プラン詳細,プランコード,hotelInfo.plan.code,325808958-399342159
+HTL,プラン詳細,プラン名（日本語）,hotelInfo.plan.name.jp,共同ドミトリー 女性限定
+HTL,プラン詳細,元料金,hotelInfo.plan.price.original,13356
+HTL,プラン詳細,割引後料金,hotelInfo.plan.price.total,5337
+HTL,プラン詳細,残室数,hotelInfo.plan.optionalInformation.numberOfRoomRemaining,6
+HTL,プラン詳細,キャンセル料発生日,hotelInfo.plan.optionalInformation.cancelChargeAriseDate,20260928
+HTL,プラン詳細,返金不可フラグ,hotelInfo.plan.optionalInformation.nonRefundable,false
+HTL,プラン詳細,事前決済要否,hotelInfo.plan.optionalInformation.prePayment,true
+HTL,設備・特徴,設備一覧,hotelInfo.plan.features,freewifi
+HTL,設備・特徴,感染対策情報,hotelInfo.diseasePreventionDetail,キャッシュレス決済利用可 等（カテゴリ別配列）
+HTL,画像,ホテル画像URL,hotelInfo.imagePath,https://i.travelapi.com/lodging/107000000/106810000/106806100/106806061/3cbff90b_b.jpg

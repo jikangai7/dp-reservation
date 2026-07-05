@@ -1,0 +1,4 @@
+curl.exe -s -X POST https://www.skygate.co.jp/dp/avail -H "Content-Type: application/json" -H "X-Requested-With: XMLHttpRequest" --data-binary "@avail-body-1.json"
+curl.exe -s -X POST https://www.skygate.co.jp/dp/avail -H "Content-Type: application/json" -H "X-Requested-With: XMLHttpRequest" --data-binary "@avail-body-2.json"
+curl.exe -s -X POST https://www.skygate.co.jp/dp/avail -H "Content-Type: application/json" -H "X-Requested-With: XMLHttpRequest" --data-binary "@avail-body-3.json"
+curl.exe -s -X POST https://www.skygate.co.jp/dp/avail -H "Content-Type: application/json" -H "X-Requested-With: XMLHttpRequest" --data-binary "@avail-body-4.json"

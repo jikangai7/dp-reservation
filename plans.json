@@ -1,0 +1,298 @@
+{
+  "generatedAt": "2026-07-05T10:13:41.620Z",
+  "condition": {
+    "dep": "TYO",
+    "dest": "TPE",
+    "from": "2026/10/01",
+    "to": "2026/10/10",
+    "adults": 1,
+    "rooms": 1,
+    "carrier": "TR"
+  },
+  "flights": [
+    {
+      "rank": 1,
+      "carrier": "スクート",
+      "productId": "W1CCOAL"
+    },
+    {
+      "rank": 3,
+      "carrier": "スクート",
+      "productId": "W2TR72S"
+    }
+  ],
+  "baseHotelUrls": {
+    "cheap": "https://www.skygate.co.jp/dp/list?AgentCode=HACTB&selectedItemKey=d1aebb3690e0012872b55f71419ca734_dpci&rooms=1&business=0&checkin=20261001&checkout=20261010&destination=TPE&filterCategoryId=1&diseasePreventionOnly=0&freeCancellationOnly=0&hotelPage=1&hotelSort=2&meta=1&preAgentCode=HACTB&form=sortHotel&tab=hotel&airCacheKey=0_37c51b63-9c14-4666-937a-0bbc62b9de3d1783246376613_1%2C25_TYO_TYO_20261001_20261010_1__1_%2C%2C%2C0%2C0%2C0_TPE_0_0&showtimeinfo=1&metaLandingInit=1",
+    "rank": "https://www.skygate.co.jp/dp/list?AgentCode=HACTB&selectedItemKey=d1aebb3690e0012872b55f71419ca734_dpci&rooms=1&business=0&checkin=20261001&checkout=20261010&destination=TPE&filterCategoryId=1&diseasePreventionOnly=0&freeCancellationOnly=0&hotelPage=1&hotelSort=4&meta=1&preAgentCode=HACTB&form=sortHotel&tab=hotel&airCacheKey=0_37c51b63-9c14-4666-937a-0bbc62b9de3d1783246376613_1%2C25_TYO_TYO_20261001_20261010_1__1_%2C%2C%2C0%2C0%2C0_TPE_0_0&showtimeinfo=1&metaLandingInit=1"
+  },
+  "entries": [
+    {
+      "rank": 1,
+      "sortLabel": "価格の安い順",
+      "flightRank": 1,
+      "site": "travelko",
+      "flight": {
+        "airline": "スクート",
+        "flightNumbers": [
+          "TR867",
+          "TR866"
+        ],
+        "airFare": "¥50,150",
+        "outbound": {
+          "dep": {
+            "time": "12:30",
+            "place": "東京(成田国際空港)"
+          },
+          "arr": {
+            "time": "15:10",
+            "place": "タイペイ（台北）(台湾桃園国際空港)"
+          }
+        },
+        "inbound": {
+          "dep": {
+            "time": "06:45",
+            "place": "タイペイ（台北）(台湾桃園国際空港)"
+          },
+          "arr": {
+            "time": "11:15",
+            "place": "東京(成田国際空港)"
+          }
+        },
+        "productId": "W1CCOAL",
+        "rank": 1
+      },
+      "hotel": {
+        "hotelCode": "404687",
+        "name": "CU ホテル 台北 西悠飯店台北店",
+        "hotelFare": "¥44,967",
+        "total": "¥83,986",
+        "stay": "航空券1名+ホテル9泊1室",
+        "cancelInfo": "ホテルキャンセル料無料2026年9月27日(日)まで"
+      },
+      "keys": {
+        "selectedItemKey": "05b33e14e9e020999d3df592289d86f0_dpci",
+        "airCacheKey": "0_37c51b63-9c14-4666-937a-0bbc62b9de3d1783246376613_1,25_TYO_TYO_20261001_20261010_1__1_,,,0,0,0_TPE_0_0",
+        "hotelCacheKey": "20_1_20261001_20261010____TPE__2__1__1___0_0_0_"
+      },
+      "listUrl": "https://www.skygate.co.jp/dp/list?AgentCode=HACTB&airCacheKey=0_37c51b63-9c14-4666-937a-0bbc62b9de3d1783246376613_1%2C25_TYO_TYO_20261001_20261010_1__1_%2C%2C%2C0%2C0%2C0_TPE_0_0&hotelCacheKey=20_1_20261001_20261010____TPE__2__1__1___0_0_0_&selectedItemKey=05b33e14e9e020999d3df592289d86f0_dpci&tab=hotel&form=reload_hotel&differentDate=0&differentRegion=0&meta=1&business=0&showtimeinfo=1#tab/hotel",
+      "availBody": {
+        "controlKeys": {
+          "AgentCode": "HACTB"
+        },
+        "condition": {
+          "selectedItemKey": "05b33e14e9e020999d3df592289d86f0_dpci"
+        },
+        "localCondition": {
+          "differentDate": 0
+        },
+        "additionalInfo": "",
+        "memberOnlyDealsFlag": false
+      },
+      "commands": {
+        "reserve": "node reserve.js avail-check --item \"05b33e14e9e020999d3df592289d86f0_dpci\" --air \"0_37c51b63-9c14-4666-937a-0bbc62b9de3d1783246376613_1,25_TYO_TYO_20261001_20261010_1__1_,,,0,0,0_TPE_0_0\" --hotel \"20_1_20261001_20261010____TPE__2__1__1___0_0_0_\" --site travelko",
+        "curl": "curl.exe -s -X POST https://www.skygate.co.jp/dp/avail -H \"Content-Type: application/json\" -H \"X-Requested-With: XMLHttpRequest\" --data-binary \"@avail-body-1.json\""
+      }
+    },
+    {
+      "rank": 1,
+      "sortLabel": "ホテルランクの高い順",
+      "flightRank": 1,
+      "site": "travelko",
+      "flight": {
+        "airline": "スクート",
+        "flightNumbers": [
+          "TR867",
+          "TR866"
+        ],
+        "airFare": "¥50,150",
+        "outbound": {
+          "dep": {
+            "time": "12:30",
+            "place": "東京(成田国際空港)"
+          },
+          "arr": {
+            "time": "15:10",
+            "place": "タイペイ（台北）(台湾桃園国際空港)"
+          }
+        },
+        "inbound": {
+          "dep": {
+            "time": "06:45",
+            "place": "タイペイ（台北）(台湾桃園国際空港)"
+          },
+          "arr": {
+            "time": "11:15",
+            "place": "東京(成田国際空港)"
+          }
+        },
+        "productId": "W1CCOAL",
+        "rank": 1
+      },
+      "hotel": {
+        "hotelCode": "1220323",
+        "name": "台北マリオット・ホテル",
+        "hotelFare": "¥367,273",
+        "total": "¥417,423",
+        "stay": "航空券1名+ホテル9泊1室",
+        "cancelInfo": "ホテルキャンセル料無料2026年9月29日(火)まで"
+      },
+      "keys": {
+        "selectedItemKey": "d40fa9cb75471e2b00126db62a48e765_dpci",
+        "airCacheKey": "0_37c51b63-9c14-4666-937a-0bbc62b9de3d1783246376613_1,25_TYO_TYO_20261001_20261010_1__1_,,,0,0,0_TPE_0_0",
+        "hotelCacheKey": "20_1_20261001_20261010____TPE__4__1__1___0_0_0_"
+      },
+      "listUrl": "https://www.skygate.co.jp/dp/list?AgentCode=HACTB&airCacheKey=0_37c51b63-9c14-4666-937a-0bbc62b9de3d1783246376613_1%2C25_TYO_TYO_20261001_20261010_1__1_%2C%2C%2C0%2C0%2C0_TPE_0_0&hotelCacheKey=20_1_20261001_20261010____TPE__4__1__1___0_0_0_&selectedItemKey=d40fa9cb75471e2b00126db62a48e765_dpci&tab=hotel&form=reload_hotel&differentDate=0&differentRegion=0&meta=1&business=0&showtimeinfo=1#tab/hotel",
+      "availBody": {
+        "controlKeys": {
+          "AgentCode": "HACTB"
+        },
+        "condition": {
+          "selectedItemKey": "d40fa9cb75471e2b00126db62a48e765_dpci"
+        },
+        "localCondition": {
+          "differentDate": 0
+        },
+        "additionalInfo": "",
+        "memberOnlyDealsFlag": false
+      },
+      "commands": {
+        "reserve": "node reserve.js avail-check --item \"d40fa9cb75471e2b00126db62a48e765_dpci\" --air \"0_37c51b63-9c14-4666-937a-0bbc62b9de3d1783246376613_1,25_TYO_TYO_20261001_20261010_1__1_,,,0,0,0_TPE_0_0\" --hotel \"20_1_20261001_20261010____TPE__4__1__1___0_0_0_\" --site travelko",
+        "curl": "curl.exe -s -X POST https://www.skygate.co.jp/dp/avail -H \"Content-Type: application/json\" -H \"X-Requested-With: XMLHttpRequest\" --data-binary \"@avail-body-2.json\""
+      }
+    },
+    {
+      "rank": 1,
+      "sortLabel": "価格の安い順",
+      "flightRank": 3,
+      "site": "travelko",
+      "flight": {
+        "airline": "スクート",
+        "flightNumbers": [
+          "TR867",
+          "TR866"
+        ],
+        "airFare": "¥63,120",
+        "outbound": {
+          "dep": {
+            "time": "12:30",
+            "place": "東京(成田国際空港)"
+          },
+          "arr": {
+            "time": "15:10",
+            "place": "タイペイ（台北）(台湾桃園国際空港)"
+          }
+        },
+        "inbound": {
+          "dep": {
+            "time": "06:45",
+            "place": "タイペイ（台北）(台湾桃園国際空港)"
+          },
+          "arr": {
+            "time": "11:15",
+            "place": "東京(成田国際空港)"
+          }
+        },
+        "productId": "W2TR72S",
+        "rank": 3
+      },
+      "hotel": {
+        "hotelCode": "404687",
+        "name": "CU ホテル 台北 西悠飯店台北店",
+        "hotelFare": "¥44,967",
+        "total": "¥96,956",
+        "stay": "航空券1名+ホテル9泊1室",
+        "cancelInfo": "ホテルキャンセル料無料2026年9月27日(日)まで"
+      },
+      "keys": {
+        "selectedItemKey": "bbf6ade4a1de963a4402545e702f7f3d_dpci",
+        "airCacheKey": "0_37c51b63-9c14-4666-937a-0bbc62b9de3d1783246376613_1,25_TYO_TYO_20261001_20261010_1__1_,,,0,0,0_TPE_0_0",
+        "hotelCacheKey": "20_1_20261001_20261010____TPE__2__1__1___0_0_0_"
+      },
+      "listUrl": "https://www.skygate.co.jp/dp/list?AgentCode=HACTB&airCacheKey=0_37c51b63-9c14-4666-937a-0bbc62b9de3d1783246376613_1%2C25_TYO_TYO_20261001_20261010_1__1_%2C%2C%2C0%2C0%2C0_TPE_0_0&hotelCacheKey=20_1_20261001_20261010____TPE__2__1__1___0_0_0_&selectedItemKey=bbf6ade4a1de963a4402545e702f7f3d_dpci&tab=hotel&form=reload_hotel&differentDate=0&differentRegion=0&meta=1&business=0&showtimeinfo=1#tab/hotel",
+      "availBody": {
+        "controlKeys": {
+          "AgentCode": "HACTB"
+        },
+        "condition": {
+          "selectedItemKey": "bbf6ade4a1de963a4402545e702f7f3d_dpci"
+        },
+        "localCondition": {
+          "differentDate": 0
+        },
+        "additionalInfo": "",
+        "memberOnlyDealsFlag": false
+      },
+      "commands": {
+        "reserve": "node reserve.js avail-check --item \"bbf6ade4a1de963a4402545e702f7f3d_dpci\" --air \"0_37c51b63-9c14-4666-937a-0bbc62b9de3d1783246376613_1,25_TYO_TYO_20261001_20261010_1__1_,,,0,0,0_TPE_0_0\" --hotel \"20_1_20261001_20261010____TPE__2__1__1___0_0_0_\" --site travelko",
+        "curl": "curl.exe -s -X POST https://www.skygate.co.jp/dp/avail -H \"Content-Type: application/json\" -H \"X-Requested-With: XMLHttpRequest\" --data-binary \"@avail-body-3.json\""
+      }
+    },
+    {
+      "rank": 1,
+      "sortLabel": "ホテルランクの高い順",
+      "flightRank": 3,
+      "site": "travelko",
+      "flight": {
+        "airline": "スクート",
+        "flightNumbers": [
+          "TR867",
+          "TR866"
+        ],
+        "airFare": "¥63,120",
+        "outbound": {
+          "dep": {
+            "time": "12:30",
+            "place": "東京(成田国際空港)"
+          },
+          "arr": {
+            "time": "15:10",
+            "place": "タイペイ（台北）(台湾桃園国際空港)"
+          }
+        },
+        "inbound": {
+          "dep": {
+            "time": "06:45",
+            "place": "タイペイ（台北）(台湾桃園国際空港)"
+          },
+          "arr": {
+            "time": "11:15",
+            "place": "東京(成田国際空港)"
+          }
+        },
+        "productId": "W2TR72S",
+        "rank": 3
+      },
+      "hotel": {
+        "hotelCode": "1220323",
+        "name": "台北マリオット・ホテル",
+        "hotelFare": "¥367,273",
+        "total": "¥430,393",
+        "stay": "航空券1名+ホテル9泊1室",
+        "cancelInfo": "ホテルキャンセル料無料2026年9月29日(火)まで"
+      },
+      "keys": {
+        "selectedItemKey": "602353c3563a6ebfeb3463846cb119a7_dpci",
+        "airCacheKey": "0_37c51b63-9c14-4666-937a-0bbc62b9de3d1783246376613_1,25_TYO_TYO_20261001_20261010_1__1_,,,0,0,0_TPE_0_0",
+        "hotelCacheKey": "20_1_20261001_20261010____TPE__4__1__1___0_0_0_"
+      },
+      "listUrl": "https://www.skygate.co.jp/dp/list?AgentCode=HACTB&airCacheKey=0_37c51b63-9c14-4666-937a-0bbc62b9de3d1783246376613_1%2C25_TYO_TYO_20261001_20261010_1__1_%2C%2C%2C0%2C0%2C0_TPE_0_0&hotelCacheKey=20_1_20261001_20261010____TPE__4__1__1___0_0_0_&selectedItemKey=602353c3563a6ebfeb3463846cb119a7_dpci&tab=hotel&form=reload_hotel&differentDate=0&differentRegion=0&meta=1&business=0&showtimeinfo=1#tab/hotel",
+      "availBody": {
+        "controlKeys": {
+          "AgentCode": "HACTB"
+        },
+        "condition": {
+          "selectedItemKey": "602353c3563a6ebfeb3463846cb119a7_dpci"
+        },
+        "localCondition": {
+          "differentDate": 0
+        },
+        "additionalInfo": "",
+        "memberOnlyDealsFlag": false
+      },
+      "commands": {
+        "reserve": "node reserve.js avail-check --item \"602353c3563a6ebfeb3463846cb119a7_dpci\" --air \"0_37c51b63-9c14-4666-937a-0bbc62b9de3d1783246376613_1,25_TYO_TYO_20261001_20261010_1__1_,,,0,0,0_TPE_0_0\" --hotel \"20_1_20261001_20261010____TPE__4__1__1___0_0_0_\" --site travelko",
+        "curl": "curl.exe -s -X POST https://www.skygate.co.jp/dp/avail -H \"Content-Type: application/json\" -H \"X-Requested-With: XMLHttpRequest\" --data-binary \"@avail-body-4.json\""
+      }
+    }
+  ]
+}
